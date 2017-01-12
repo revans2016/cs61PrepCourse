@@ -8,7 +8,9 @@ puts
 print "Downloading #{pic_names.length} files: "
 
 while true 
-	if File.exist?(batch_name) == true 
+	if File.exist?(name) == true 
+		exit
+	else 
 		pic_number = 1 
 		pic_names.each do |name|
 			print '.'
@@ -21,7 +23,5 @@ while true
 			File.rename name, new_name
 			pic_number = pic_number + 1 
 		puts 'Done!'
-	else 
-		exit
 	end
 end 
