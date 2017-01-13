@@ -8,7 +8,7 @@ puts
 print "Downloading #{pic_names.length} files: "
 
 while true 
-	if File.exist?(name) == true 
+	if File.exist?(new_name) == true 
 		exit
 	else 
 		pic_number = 1 
@@ -23,5 +23,6 @@ while true
 			File.rename name, new_name
 			pic_number = pic_number + 1 
 		puts 'Done!'
-	end
-end 
+	end 
+end
+end
