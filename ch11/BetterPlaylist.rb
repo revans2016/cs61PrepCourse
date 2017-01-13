@@ -22,18 +22,24 @@ end
 
 
 def music_shuffle filenames
-	len = filenames.length
+	half_len = filenames.length/2
 	new_array = []
-	2.times do 
-		thing = filenames.pop
-		new_array.push(thing)
+	my_index = 0
+	filenames.each do |thing|
+		if  my_index == half_len
+			break
+		else
+			filenames.pop thing
+			new_array.push thing
+		end
+		my_index = my_index + 1
 	end
-	shuffle(filenames)
 	shuffle(new_array)
+	shuffle(filenames)
 	final_array = filenames + new_array
 	filenames = final_array
-end
+end 
 
-songz = ['rr/eee', 'AAA/bbb', 'dog/cat', 'penguin/land']
+songz = ['rr/eee', 'AAA/bbb', 'dog/cat', 'penguin/land', 'hello/kitty', 'fun/sun']
 
 puts(music_shuffle(songz))
